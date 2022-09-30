@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포토</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <style>
+        #banner1{
+            border: 3px solid #000;
+        width: 900px;
+        margin :0px auto;
+        position: relative;
+        }
+        *{margin:0px;padding: 0px;}
+        ul,li,ol{list-style: none;}
+        #banner1 img{width:100%;}
+        #banner1 ul{
+            display: flex;
+        }
+        #banner1 ul li{overflow: hidden;}
+        #banner1 ul img:hover{
+           cursor: pointer;
+        }
+        #banner1 ul img{
+            margin-right: 20px;
+        }
+        i.fas{
+            
+            position: absolute;
+            top:50%;
+            font-size: 90px;
+            cursor: pointer;
+            background-color: rgba(215,215,215,.4);
+            color: #fff;
+            
+        }
+        .fa-angle-left{
+            left:0%;
+        }
+        .fa-angle-right{
+            right: 0%;
+        }
+        .fa-angle-left:hover{
+            color:#f00;
+        }
+        .fa-angle-right:hover{
+            color:#f00;
+        }
+
+     </style>
+</head>
+<body>
+    <article id="banner1">
+        <ul>
+            <li><img src="./images/movie_image1.jpg" alt="" onclick='imgChange(1);'></li>
+            <li><img src="./images/movie_image2.jpg" alt="" onclick='imgChange(2);'></li>
+            <li><img src="./images/movie_image3.jpg" alt="" onclick='imgChange(3);'></li>
+            <li><img src="./images/movie_image4.jpg" alt="" onclick='imgChange(4);'></li>
+            <li><img src="./images/movie_image5.jpg" alt="" onclick='imgChange(5);'></li>
+            <li><img src="./images/movie_image6.jpg" alt="" onclick='imgChange(6);'></li>
+            <li><img src="./images/movie_image7.jpg" alt="" onclick='imgChange(7);'></li>
+            <li><img src="./images/movie_image8.jpg" alt="" onclick='imgChange(8);'></li>
+            <li><img src="./images/movie_image9.jpg" alt="" onclick='imgChange(9);'></li>
+            <li><img src="./images/movie_image10.jpg" alt="" onclick='imgChange(10);'></li>
+        </ul>
+        <div id="main_img">
+            <img src="./images/img1.jpg" alt="" id = banner>
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-right"></i>
+        </div>
+    </article>
+
+   <script>
+     let n=1;
+        
+
+        function nexting(){
+            if(n==10){
+                n=1;
+            }
+            else{
+                n++;
+
+
+            }
+            console.log(n);
+           
+            document.getElementById('banner').src='./images/img'+n+'.jpg';
+        }
+
+        function preving(){
+            if(n==1){
+                n=10;
+            }
+            else{
+                n--;
+            }
+            console.log(n);
+           
+            document.getElementById('banner').src='./images/img'+n+'.jpg';
+        }
+        
+    const l_btn = document.querySelector('i.fa-angle-left');
+    const r_btn = document.querySelector('i.fa-angle-right');
+
+    r_btn.addEventListener('click',function(e){
+        nexting();
+    })
+
+    l_btn.addEventListener('click',function(e){
+        preving();
+    })
+    function imgChange(a){
+            document.getElementById('banner').src='./images/img'+a+'.jpg';
+            n=a
+            console.log(a);
+           
+        }
+   </script>
+</body>
+</html>
