@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_javascirpt_제어문_if문 실습예제</title>
+    <script>
+        let id = prompt('아이디를 입력하세요');
+        // let pw = prompt('비밀번호를 입력하세요');
+      
+        //    if((id=='master'||id=='abcd'||id=='naver')&&(pw=='1234')){
+        //     document.write('<p>인증 완료<p>')
+        //    }
+        //    else{
+        //     document.write('<p>인증 실패,다시 시도하세요.<p>')
+        //    }
+
+           if(id=='master'||id=='abcd'||id=='naver'){
+            let pw = prompt('비밀번호를 입력하세요');
+            if(pw=='1234'){
+                document.write('<p>인증 완료<p>')
+            }
+            else{
+                document.write('<p>비밀번호가 잘못되었습니다</p>')
+            }
+           }
+           else{
+            document.write('<p>아이디가 잘못되었습니다</p>')
+           }
+
+        
+    </script>
+</head>
+<body>
+    <h3>실습예제 1</h3>
+    <p>사용자가 입력한 아이디가 'master','abcd','naver'중 하나만 입력해도 인증이 되며, 패스워드는
+        '1234'일 때 인증이 되도록 결과값이 나오도록 함. 아이디와 패스워드가 맞으면 '인증완료', 아이디와
+        패스워드가 일치하지 않으면 '인증실패 다시 시도하세요' 라고 출력하기
+    </p>
+    
+</body>
+</html>

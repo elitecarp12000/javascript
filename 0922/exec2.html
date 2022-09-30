@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 포토</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <style>
+        #banner{
+            width: 885px;
+            height: 590px;
+            position: relative;
+            
+        }
+        .photo{
+            margin: 0px auto;
+        }
+        
+        
+        i.fas{
+            
+            position: absolute;
+            top:50%;
+            font-size: 90px;
+            cursor: pointer;
+            background-color: rgba(215,215,215,.4);
+            color: #fff;
+            
+        }
+        .fa-angle-left{
+            left:0%;
+        }
+        .fa-angle-right{
+            right: 0%;
+        }
+        .fa-angle-left:hover{
+            color:#f00;
+        }
+        .fa-angle-right:hover{
+            color:#f00;
+        }
+        #banner *{padding:0px;margin: 0px;}
+
+        
+        
+     </style>
+</head>
+<body>
+    <article id="banner">
+        <img src="./images/img1.jpg" alt="영화1" id="photo">
+        <i class="fas fa-angle-left"></i>
+        <i class="fas fa-angle-right"></i>
+    <span id="page"></span>
+    </article>
+    
+    <script>
+        let n=1;
+        
+
+        function nexting(){
+            if(n==10){
+                n=1;
+            }
+            else{
+                n++;
+            }
+            console.log(n);
+           
+            document.getElementById('photo').src='./images/img'+n+'.jpg';
+        }
+
+        function preving(){
+            if(n==1){
+                n=10;
+            }
+            else{
+                n--;
+            }
+            console.log(n);
+           
+            document.getElementById('photo').src='./images/img'+n+'.jpg';
+        }
+        
+    const l_btn = document.querySelector('i.fa-angle-left');
+    const r_btn = document.querySelector('i.fa-angle-right');
+
+    r_btn.addEventListener('click',function(e){
+        nexting();
+    })
+
+    l_btn.addEventListener('click',function(e){
+        preving();
+    })
+
+    </script>
+</body>
+</html>

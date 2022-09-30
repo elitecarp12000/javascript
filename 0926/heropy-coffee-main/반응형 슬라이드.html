@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 슬라이드_이미지교체</title>
+  <style>
+    *{margin:0px;padding:0px;}
+    img{width:100%;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+
+      $(window).resize(function(){ //브라우저의 가로크기가 변하면
+        let w_size = $(window).width(); //가로크기를 구한다
+
+        console.log(w_size); //테스트해보기
+
+        if(w_size <= 768){ //가로해상도가 모바일 영역이면
+          $('.slide').find('img').attr('src','./images/main01_m.jpg'); //모바일 이미지가 나오고
+        }else{ //그렇지 않으면 
+          $('.slide').find('img').attr('src','./images/main01.jpg'); //pc, tablet이미지가 나온다.
+        }
+        
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>반응형 슬라이드_이미지교체</h2>
+  <p>가로해상도에 따른 메인 이미지 슬라이드 변경하기</p>
+
+
+  <article class="slide">
+    <a href="index.html" title="">
+      <img src="./images/main01.jpg" alt="">
+    </a>
+  </article>
+
+</body>
+</html>
